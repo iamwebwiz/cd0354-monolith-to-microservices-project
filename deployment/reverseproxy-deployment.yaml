@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: reverseproxy
-        image: iamwebwiz/reverseproxy:v2
+        image: iamwebwiz/reverseproxy:v5
         imagePullPolicy: Always
         resources:
           requests:
