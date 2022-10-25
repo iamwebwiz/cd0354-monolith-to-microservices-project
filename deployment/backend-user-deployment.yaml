@@ -19,8 +19,10 @@ spec:
         image: iamwebwiz/udagram-api-user:v2
         resources:
           requests:
+            memory: "100Mi"
             cpu: "200m"
           limits:
+            memory: "1024Mi"
             cpu: "500m"
         ports:
         - containerPort: 8080
