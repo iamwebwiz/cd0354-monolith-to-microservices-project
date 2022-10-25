@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: iamwebwiz/udagram-frontend:v8
+        image: iamwebwiz/udagram-frontend:v9
         resources:
           requests:
             cpu: "200m"
