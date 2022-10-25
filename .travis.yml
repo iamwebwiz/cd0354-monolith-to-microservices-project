@@ -16,17 +16,17 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t reverseproxy ./udagram-reverseproxy
-  - docker tag reverseproxy $DOCKER_USERNAME/reverseproxy:v4
+  - docker tag reverseproxy $DOCKER_USERNAME/reverseproxy:v5
   - docker build -t udagram-api-user ./udagram-api-user
-  - docker tag udagram-api-user $DOCKER_USERNAME/udagram-api-user:v4
+  - docker tag udagram-api-user $DOCKER_USERNAME/udagram-api-user:v5
   - docker build -t udagram-api-feed ./udagram-api-feed
-  - docker tag udagram-api-feed $DOCKER_USERNAME/udagram-api-feed:v4
+  - docker tag udagram-api-feed $DOCKER_USERNAME/udagram-api-feed:v5
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend $DOCKER_USERNAME/udagram-frontend:v4
+  - docker tag udagram-frontend $DOCKER_USERNAME/udagram-frontend:v5
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push $DOCKER_USERNAME/reverseproxy:v4
-  - docker push $DOCKER_USERNAME/udagram-api-user:v4
-  - docker push $DOCKER_USERNAME/udagram-api-feed:v4
-  - docker push $DOCKER_USERNAME/udagram-frontend:v4
+  - docker push $DOCKER_USERNAME/reverseproxy:v5
+  - docker push $DOCKER_USERNAME/udagram-api-user:v5
+  - docker push $DOCKER_USERNAME/udagram-api-feed:v5
+  - docker push $DOCKER_USERNAME/udagram-frontend:v5
